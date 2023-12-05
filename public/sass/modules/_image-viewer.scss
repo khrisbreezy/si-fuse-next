@@ -1,0 +1,50 @@
+.image-viewer {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .9);
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    //transition: all .5s ease;
+
+    &.show {
+      width: auto;
+      height: auto;
+      opacity: 1;
+    }
+  }
+
+  .close {
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: absolute;
+    right: -45px;
+    top: -45px;
+
+    &::before {
+      content: "";
+      background-image: url("/images/icon/close.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: transparent;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      left: 25px;
+      bottom: 27px;
+    }
+  }
+}

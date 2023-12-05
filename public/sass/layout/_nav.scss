@@ -1,0 +1,157 @@
+nav.navbar {
+  font-size: 1.6rem;
+  padding: 0 6rem 0 6rem;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+  height: 64px;
+
+  @include media("tablet"){
+    padding: 0 2rem 0 2rem;
+  }
+
+  @include media("mobile"){
+    padding: 0 20px 0 20px;
+    background: white;
+    height: 50px;
+  }
+
+  ul.navbar-nav {
+    flex-direction: row;
+    flex-wrap: inherit;
+
+    @include media("mobile-landscape"){
+      display: none;
+    }
+
+    li.nav-item {
+      position: relative;
+
+      .nav-link {
+        padding-right: 0;
+        color: white;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: normal;
+        letter-spacing: 4px;
+        //letter-spacing: .4rem;
+      }
+
+      &:first-child {
+        .nav-link {
+          margin-right: 30px;
+          position: relative;
+
+          &::after {
+            content: '';
+            height: 2px;
+            width: 6px;
+            background: #fff;
+            position: absolute;
+            top: 17px;
+            right: -20px;
+          }
+        }
+      }
+
+      span {
+        color: #fff;
+        padding-left: .7rem;
+        letter-spacing: .3rem;
+      }
+    }
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media only screen and (max-width: $tablet_width) {
+      display: none;
+    }
+
+    .clip {
+      height: 64px;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      display: block;
+      top: 12px;
+      transform: translateX(-50%);
+      left: calc(50% + 5px);
+
+      #notification-btn {
+        border: none;
+        background: transparent;
+        margin-right: 2rem;
+        outline: none;
+      }
+
+      img {
+        width: 32px;
+      }
+
+    }
+  }
+
+  .account-btns{
+    button{
+      img{
+        height: 30px;
+      }
+    }
+    @include media("mobile") {
+      button{
+        padding-left: 0;
+
+        img{
+          height: 25px;
+        }
+      }
+    }
+  }
+  
+  //Active notification bar 
+  .active-bar {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: $red;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 7px;
+    }
+    
+  }
+
+  .logo-small-screen {
+    display: none;
+
+    @media only screen and (max-width: $tablet_width) {
+      display: block;
+      height: 36px;
+      position: relative;
+      left: -5px;
+      //padding: 8px;
+    }
+  }
+
+}

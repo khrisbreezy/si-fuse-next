@@ -1,0 +1,60 @@
+// Font Stacks
+
+//$font-url : 'https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Playfair+Display:700';
+
+@mixin do-font-face($name, $file-name, $url, $type, $weight, $style){
+  @font-face {
+    font-family: $name;
+    //src: url(#{$url + $file-name}.eot);
+    //src: url(#{$url + $file-name}.eot?#iefix) format('embedded-opentype');
+    @if $type == "otf"{
+      src: url(#{$url + $file-name}.otf) format('opentype');
+    }
+    @if $type == "ttf"{
+      src: url(#{$url + $file-name}.ttf) format('truetype');
+    }
+    @if $type == "woff"{
+      src: url(#{$url + $file-name}.woff);
+    }
+    @if $type == "woff2"{
+      src: url(#{$url + $file-name}.woff2);
+    }
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+
+@include do-font-face('Fira Sans', 'FiraSans-Bold', '/fonts/', 'ttf', bold, normal);
+@include do-font-face('Fira Sans', 'FiraSans-Regular', '/fonts/', 'ttf', normal, normal);
+@include do-font-face('League Spartan', 'LeagueSpartan-Bold', '/fonts/', 'otf', bold, normal);
+@include do-font-face('HKGrotesk', 'HKGrotesk-SemiBold', '/fonts/', 'otf', bold, normal);
+
+$firasans        : 'Fira Sans', sans-serif;
+$league-spartan     : 'League Spartan', sans-serif;
+$hkgrotesk     : 'HKGrotesk', sans-serif;
+
+$ffh            : $league-spartan;
+$ffh2           : $hkgrotesk;
+$ffb            : $firasans;
+
+$normal         : normal;
+$bold           : bold;
+
+// Colors
+
+$dark-brown   : #811A06;
+$red   : #E14C22;
+$gold  : #EBC345;
+$green : #35B283;
+$trans-red: #F4C9C1;
+$grey   : #9B9B9B;
+$light-grey   : #F8F8F8;
+$dark-light   : #DADADA;
+$light-blue   : #51B8D9;
+$color-black  : #3E3E3E;
+$color-black-2  : #6B6B6B;
+$background-grey : #C4C4C4;
+$color-green :  #04CF00;
+$orange-red   : $red;
+$blue-grey:   #ECEFF1;

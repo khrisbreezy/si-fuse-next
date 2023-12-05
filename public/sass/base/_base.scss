@@ -1,0 +1,86 @@
+html, body {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $ffb;
+  font-size: 16px;
+  color: $color-black;
+}
+
+%headings{
+  font-family: $ffh2;
+  line-height: 1.4;
+}
+
+h1 {
+  @extend %headings;
+  font-family: $ffh;
+  font-size: 60px;
+}
+
+h2 {
+  @extend %headings;
+  font-family: $ffh;
+  font-size: 40px;
+  text-transform: uppercase;
+
+  @include media("mobile"){
+    font-size: 30px;
+  }
+}
+
+h3 {
+  @extend %headings;
+  font-size: 36px;
+
+  @include media("mobile"){
+    font-size: 30px;
+  }
+}
+
+h4 {
+  @extend %headings;
+  font-size: 24px;
+
+  @include media("mobile"){
+    font-size: 21px;
+  }
+}
+
+h5 {
+  @extend %headings;
+  font-size: 18px;
+}
+
+h6 {
+  @extend %headings;
+  font-size: 1rem;
+}
+
+p, ul, li {
+  font-size: 16px;
+  font-weight: $normal;
+  font-family: $firasans;
+  line-height: 1.5;
+  list-style: none;
+}
+
+
+p {
+  margin-bottom: 30px;
+}
+
+a {
+  font-size: 16px;
+  //font-weight: $bold;
+  text-decoration: none;
+  font-family: $firasans;
+  color: $color-black;
+
+  &:hover{
+    color: inherit;
+    text-decoration: none;
+  }
+}

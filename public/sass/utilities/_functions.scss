@@ -1,0 +1,5 @@
+//  Import Google Fonts URL
+
+@if variable-exists(font-url) {
+    @import url($font-url);
+}
